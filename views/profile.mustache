@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
-        <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/main.css">
 </head>
 <body>
     <section class="profile-wrapper">
@@ -13,7 +13,7 @@
         <div class="profile-container">
 
             <div class="profile-top">
-                <div class="image">
+                <div class="image-box">
                     <img class="profileImage" src="{{avatar}}" alt="">
                 </div>
 
@@ -29,14 +29,14 @@
 
                 <div class="left-box">
                     {{#university}}
-                    <div class="edskills">Education</div>
+                    <div class="edu-skills">Education</div>
                     {{/university}} {{^university}} {{/university}}
-                    <div class="edskills">Skills</div>
+                    <div class="edu-skills">Skills</div>
                 </div>
 
                 <div class="right-box">
                     {{#university}}
-                    <div class="ed">{{.}}</div>
+                    <div class="edu">{{.}}</div>
                     {{/university}} {{^university}} {{/university}} {{#skills}}
                     <div class="skills">{{.}}</div>{{/skills}}
                 </div>
