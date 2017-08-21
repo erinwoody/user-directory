@@ -5,26 +5,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
-        <link rel="stylesheet" href="/styles.css">
-        <link rel="stylesheet" href="/views/profile.mustache">
+        <link rel="stylesheet" href="/css/main.css">
 </head>
 <body>
 
-    <div class="wrapper">
-        <div class="box">              
+    <section class="wrapper">
+
+        <div class="container"> 
+
+            <h1>Index Title</h1>       
+
             {{#users}}
             <div class="userbox">
+                <a href="/profile/{{id}}"><img src="{{avatar}} " alt=" " class="avatar "></a>
                 <div class="name">{{name}}</div>
-                <div class="avatar">{{avatar}}</div>
-                <div class="job">{{#job}}{{job}}{{/job}}{{^job}} 
-                    <p class="hire-p">Available for hire!</p>
-                {{/job}}</div> 
-                <div class="company">{{#company}}{{company}}{{/company}}{{^company}} {{/company}}</div>
+                {{#job}}
+                <div class="job">{{job}}, {{company}}</div>
+                {{/job}}{{^job}}
+                <div class="no-job">Available for hire</div>
+                {{/job}}
             </div>
             {{/users}}
+    
         </div>
-
-    </div>
+        
+    </section>
 
 </body>
 </html>
