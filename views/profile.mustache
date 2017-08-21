@@ -5,36 +5,46 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
-        <link rel="stylesheet" href="/styles.css">
-        <link rel="stylesheet" href="/views/index.mustache">
+        <link rel="stylesheet" href="/css/main.css">
 </head>
 <body>
-    <div class="wrapper">
-      <div class="left"></div> 
-        <div class=""></div>
+    <section class="profile-wrapper">
 
-        <div class="box">              
-            {{#users}}
+        <div class="profile-container">
 
-            <div class="userbox">
-                <div class="name">{{name}}</div>
-                <div class="avatar">{{avatar}}</div>
-                <div class="city">{{city}}</div>
-                <div class="country">{{country}}</div>
-                <div class="job">{{#job}}{{job}}{{/job}}{{^job}} Available for hire {{/job}}</div> 
-                <div class="company">{{#company}}{{company}}{{/company}}{{^company}} {{/company}}</div>
-                <div class="email">{{email}}</div>
-                <div class="phone">{{phone}}</div>
+            <div class="profile-top">
+                <div class="image">
+                    <img class="profileImage" src="{{avatar}}" alt="">
+                </div>
+
+                <div class="userInfo">
+                    <h1 class="userName">{{name}}</h1>
+                    <div class="userAddress">{{#address.city}}{{address.city}}, {{/address.city}}{{address.country}} | {{#job}}{{job}}, {{company}}{{/job}}{{^job}}</div>
+                    <div class="nojob">Available for hire</div>{{/job}}
+                    <div class="userEmail">{{email}} | {{phone}}</div>
+                </div>
             </div>
 
-            <div class="skillsbox">
-                <li style = "list-style: none">
-                    <div class="university">{{university}}</div>
-                    <div class="skills">{{skills}}</div>
-                </li>
+            <div class="profile-bottom">
+
+                <div class="left-box">
+                    {{#university}}
+                    <div class="edskills">Education</div>
+                    {{/university}} {{^university}} {{/university}}
+                    <div class="edskills">Skills</div>
+                </div>
+
+                <div class="right-box">
+                    {{#university}}
+                    <div class="ed">{{.}}</div>
+                    {{/university}} {{^university}} {{/university}} {{#skills}}
+                    <div class="skills">{{.}}</div>{{/skills}}
+                </div>
             </div>
-            {{/users}}
         </div>
+
+     </section>
+
 </body>
 </html>
 
