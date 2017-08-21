@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+        <link rel="stylesheet" href="/styles.css">
+        <link rel="stylesheet" href="/views/index.mustache">
+</head>
+<body>
+    <div class="wrapper">
+      <div class="left"></div> 
+        <div class=""></div>
+
+        <div class="box">              
+            {{#users}}
+
+            <div class="userbox">
+                <div class="name">{{name}}</div>
+                <div class="avatar">{{avatar}}</div>
+                <div class="city">{{city}}</div>
+                <div class="country">{{country}}</div>
+                <div class="job">{{#job}}{{job}}{{/job}}{{^job}} Available for hire {{/job}}</div> 
+                <div class="company">{{#company}}{{company}}{{/company}}{{^company}} {{/company}}</div>
+                <div class="email">{{email}}</div>
+                <div class="phone">{{phone}}</div>
+            </div>
+
+            <div class="skillsbox">
+                <li style = "list-style: none">
+                    <div class="university">{{university}}</div>
+                    <div class="skills">{{skills}}</div>
+                </li>
+            </div>
+            {{/users}}
+        </div>
+</body>
+</html>
+
